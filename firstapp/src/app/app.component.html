@@ -1,1 +1,22 @@
 <p>welcome to {{title}}</p>
+
+Textbox1: <input type="text" value={{first_name}} id="textbox1" [disabled]="flag"/>
+Textbox2: <input type="text" [value]="last_name" id="textbox2"/>
+
+<div [class]="myclass">Hello</div>
+
+<p>
+    <!-- <button (click)="show()">Show</button> -->
+    <input #someInput type="text" placeholder="pizza topping"/>
+</p>
+
+First Name: <input type="text" [(ngModel)]="first_name" name="first_name"/>
+
+<!-- <app-fav>
+    <p>hello from app-fav</p>
+</app-fav> -->
+
+<!-- <app-fav [parentData]="name" (childData)="message=$event"></app-fav> -->
+
+<div *ngIf=flag>Conditional If</div>
+<button (click)="show()">Show</button>
