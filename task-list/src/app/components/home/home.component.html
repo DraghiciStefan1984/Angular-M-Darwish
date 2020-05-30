@@ -3,20 +3,20 @@
         <p>Add Task</p>
     </div>
     <div class="col">
-        <p>Task List</p>
+        <p>Task List: {{itemCounter}}</p>
     </div>
 </div>
 
-<div class="container color-light">
+<div class="container color-light" [@projects]="projects.length">
     <div class="col">
         <h2>Add your task and to remove it</h2>
         <form>
-            <input type="text" class="text" name="projectname" placeholder="Project name">
+            <input type="text" class="text" name="projectName" placeholder="Project name" [(ngModel)]="projectText">
             <br>
-            <input type="submit" class="btn" value="Add Task">
+            <input type="submit" class="btn" value="Add Task" (click)="addItem()">
         </form>
     </div>
     <div class="col">
-        <p class="projects-container">Project List</p>
+        <p class="projects-container" *ngFor="let project of projects; let i=index" (click)="removeItem(i)">{{project}}</p>
     </div>
 </div>
