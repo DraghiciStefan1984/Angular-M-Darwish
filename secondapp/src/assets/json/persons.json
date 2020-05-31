@@ -1,0 +1,10 @@
+[
+    {"id": 1, "name": "Bogdan", "age": 20, "gender": "male"},
+    {"id": 2, "name": "Andrei", "age": 33, "gender": "male"},
+    {"id": 3, "name": "Gabi", "age": 31, "gender": "female"},
+    {"id": 4, "name": "Claudia", "age": 20, "gender": "female"},
+    {"id": 5, "name": "Ion", "age": 24, "gender": "male"},
+    {"id": 6, "name": "Ioana", "age": 40, "gender": "female"},
+    {"id": 7, "name": "Cristi", "age": 18, "gender": "male"},
+    {"id": 8, "name": "Vali", "age": 28, "gender": "female"}
+]
