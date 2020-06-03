@@ -2,18 +2,29 @@
   {{getName()}} To Do List
 </h3>
 
+<div class="my-1">
+  <input type="text" class="form-control" #todotext>
+  <button class="btn btn-primary mt-1" (click)="addItem(todotext.value)">Add New Task</button> 
+</div>
+
 <table>
   <thead>
     <tr>
       <th>Index</th>
       <th>Tasks</th>
+      <th>Action</th>
       <th>Status</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of getTodoItems(); let i=index">
+    <tr *ngFor="let item of items; let i=index">
       <td>{{i+1}}</td>
       <td>{{item.action}}</td>
+      <td><input type="checkbox" [(ngModel)]="item.done"></td>
+      <td [ngSwitch]="item.done">
+        <span *ngSwitchCase="true">Yes</span>
+        <span *ngSwitchDefault>No</span>
+      </td>
     </tr>
   </tbody>
 </table>
