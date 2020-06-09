@@ -5,11 +5,14 @@ import { AppComponent } from 'src/app/app.component';
 import { ModelModule } from 'src/app/models/model.module';
 import { StoreComponent } from './store.component';
 import { CartSummaryComponent } from '../cart-summary/cart-summary.component';
+import { CartDetailsComponent } from '../cart-details/cart-details.component';
+import { CheckoutComponent } from '../checkout/checkout.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-    imports: [BrowserModule, ModelModule, FormsModule],
-    declarations: [StoreComponent, CartSummaryComponent],
-    exports: [StoreComponent],
+    imports: [BrowserModule, ModelModule, FormsModule, RouterModule],
+    declarations: [StoreComponent, CartSummaryComponent, CartDetailsComponent, CheckoutComponent],
+    exports: [StoreComponent, CartSummaryComponent, CartDetailsComponent, CheckoutComponent],
     providers: [],
     bootstrap: [AppComponent]
 })
