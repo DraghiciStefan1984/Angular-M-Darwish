@@ -1,3 +1,4 @@
+import { AdminModule } from './admin/admin.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,8 +11,9 @@ import { StoreFirstGuard } from './components/store/storefirst.guard';
 
 const routes: Routes = [
   {path: "store", component: StoreComponent, canActivate:[StoreFirstGuard]},
-  {path: "cart", component: CartDetailsComponent},
-  {path: "checkout", component: CheckoutComponent},
+  {path: "cart", component: CartDetailsComponent, canActivate:[StoreFirstGuard]},
+  {path: "checkout", component: CheckoutComponent, canActivate:[StoreFirstGuard]},
+  {path: "admin", loadChildren: "./admin/admin.module#AdminModule", canActivate:[StoreFirstGuard]},
   {path: "**", redirectTo: "store"},
 ];
 
